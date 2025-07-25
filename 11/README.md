@@ -19,15 +19,14 @@ You can find the solution at [exercise1.docx](./exercise1.docx)
 
 Files:
 
-- [src/my_vector.cpp](./src/my_vec.cpp) with the `main` function.
+- [src/my_vec.cpp](./src/my_vec.cpp) with the `main` function.
 - [src/my_vector.cpp](./src/my_vector.cpp) with implementation of the `my_vector` class.
 - [includes/my_vector.h](./includes/my_vector.h) with the declaration of the `my_vector` class.
 
 How to run:
 
 ```bash
-make
-make run exercise2
+make exercise2
 ```
 
 ### Exercise 3
@@ -39,20 +38,18 @@ Files:
 How to run:
 
 ```bash
-make
-make run exercise3
+make exercise3 NAME=Vered # or any other name
 ```
 
 ### Exercise 4
 
 Files:
 
-- [data/example.csv](./11/data/example.csv) with example data.
-- [src/csv_read.cpp](./11/src/csv_read.cpp) with the `main` function.
+- [data/example.csv](./data/example.csv) with example data.
+- [src/csv_read.cpp](./src/read_csv.cpp) with the `main` function.
 
 How to run:
 
 ```bash
-make
-make run exercise4 ./data/example.csv
+make exercise4 FILE=./data/example.csv # or any other csv file
 ```
