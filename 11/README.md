@@ -34,6 +34,8 @@ make exercise2
 Files:
 
 - [src/all_vecs.cpp](./src/all_vecs.cpp) with the `main` function.
+- [includes/my_string.h](./includes/my_string.h) with the declaration of the `my_string` class.
+- [src/my_string.cpp](./src/my_string.cpp) with implementation of the `my_string` class.
 
 How to run:
 
