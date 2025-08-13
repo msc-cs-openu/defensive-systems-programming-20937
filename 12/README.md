@@ -9,6 +9,7 @@ You can find the solution at [exercise1.docx](./exercise1.docx).
 ## Exercise 2
 
 You can find the solution at [exercise2.docx](./exercise2.docx).
+And the fixed version of [mmn12-q2.cpp](./mmn12-q2.cpp) at [fixed-mmn12-q2.cpp](./fixed-mmn12-q2.cpp)
 
 Build the solution with:
 
