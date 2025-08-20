@@ -1,6 +1,6 @@
 # Compiler configuration
 CC = g++
-CFLAGS = -Wall -Wextra -std=c++17 -m32 -g3 -save-temps -fno-pie -no-pie -fverbose-asm
+CFLAGS = -std=c++17 -m32 -g3 
 # Directories
 OBJ_DIR = obj
 BIN_DIR = bin

@@ -23,7 +23,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-
 #define PROGRAM_NAME "echoutil"
 #define VERSION "1.0"
 
@@ -45,39 +44,37 @@ class Handler
    }
 
 public:
-
-   void interpret(const char* str)
+   void interpret(const char *str)
    {
       helper(str);
    }
 };
 
-
 void usage(int status)
 {
    fputs("Echo the STRING(s) to standard output\n"
-      "\n"
-      "\t-n   do not output the trailing newline\n"
-      "\t-e   enable interpretation of backslash escapes\n"
-      "\n"
-      "\tIf - e is in effect, the following sequences are recognized : \n"
-      "\t\t\\xHH	byte with hexadecimal value HH(1 to 2 digits)\n"
-      , stdout);
+         "\n"
+         "\t-n   do not output the trailing newline\n"
+         "\t-e   enable interpretation of backslash escapes\n"
+         "\n"
+         "\tIf - e is in effect, the following sequences are recognized : \n"
+         "\t\t\\xHH	byte with hexadecimal value HH(1 to 2 digits)\n",
+         stdout);
 
    exit(status);
 }
 
-void handle_escape(const char* str)
+void handle_escape(const char *str)
 {
    struct
    {
-      char buffer[16] = { 0 };
+      char buffer[16] = {0};
       Handler h;
    } l;
 
    // copy only the characters after the escape char
-   const char* s = str;
-   char* p = l.buffer;
+   const char *s = str;
+   char *p = l.buffer;
    s++;
    while (*s)
       *p++ = *s++;
@@ -94,11 +91,11 @@ void handle_escape(const char* str)
    }
 }
 
-char* dupenv(const char* varname)
+char *dupenv(const char *varname)
 {
 #if defined(_WIN32)
 
-   char* buff = NULL;
+   char *buff = NULL;
    size_t cnt;
    if (_dupenv_s(&buff, &cnt, varname) != 0)
       return NULL;
@@ -106,19 +103,19 @@ char* dupenv(const char* varname)
 
 #elif defined(__linux__)
 
-   const char* s = getenv(varname);
+   const char *s = getenv(varname);
    if (!s)
       return NULL;
    return strdup(s);
 
 #endif
 }
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
    bool display_return = true;
    bool do_escape = false;
 
-   char* env = dupenv("ECHOUTIL_OPT_ON");
+   char *env = dupenv("ECHOUTIL_OPT_ON");
    bool allow_options = env != NULL;
    free(env);
 
@@ -141,12 +138,13 @@ int main(int argc, char** argv)
    {
       while (argc > 0 && *argv[0] == '-')
       {
-         const char* temp = argv[0] + 1;
+         const char *temp = argv[0] + 1;
          size_t i;
          for (i = 0; temp[i]; i++)
             switch (temp[i])
             {
-            case 'e': case 'n':
+            case 'e':
+            case 'n':
                break;
             default:
                goto just_echo;
@@ -176,9 +174,9 @@ just_echo:
 
    while (argc > 0)
    {
-      const char* s = argv[0];
+      const char *s = argv[0];
 
-      if(do_escape && s[0] == '\\')
+      if (do_escape && s[0] == '\\')
          handle_escape(s);
       else
          fputs(argv[0], stdout);
