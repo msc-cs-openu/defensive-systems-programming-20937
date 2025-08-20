@@ -12,3 +12,7 @@ Files for the exercises of MMN 13.
 Answer at [fruit.py](./fruit.py).
 
 ## Exercise 3
+
+1. Answer at [pros.py](./pros.py).
+2. Answer at [meta.py](./meta.py).
+3. Answer at [q3.docx](./q3.docx).
