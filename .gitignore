@@ -1,14 +1,14 @@
-# Ignore zip files
 *.zip
 
-# Ignore build objects
 **/build
 **/bin
 **/obj
 
-# Ignore IDE files
 .vscode/
 .idea/
 
-# Ignore output files
 output.txt
+
+/.venv
+__pycache__/
+.pytest_cache/
