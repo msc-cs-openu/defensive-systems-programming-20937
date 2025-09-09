@@ -129,6 +129,30 @@ mmn14-server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmn14-server.dir/build.make CMakeFiles/mmn14-server.dir/build
 .PHONY : mmn14-server/fast
 
+src/RequestHandler.o: src/RequestHandler.cpp.o
+.PHONY : src/RequestHandler.o
+
+# target to build an object file
+src/RequestHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmn14-server.dir/build.make CMakeFiles/mmn14-server.dir/src/RequestHandler.cpp.o
+.PHONY : src/RequestHandler.cpp.o
+
+src/RequestHandler.i: src/RequestHandler.cpp.i
+.PHONY : src/RequestHandler.i
+
+# target to preprocess a source file
+src/RequestHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmn14-server.dir/build.make CMakeFiles/mmn14-server.dir/src/RequestHandler.cpp.i
+.PHONY : src/RequestHandler.cpp.i
+
+src/RequestHandler.s: src/RequestHandler.cpp.s
+.PHONY : src/RequestHandler.s
+
+# target to generate assembly for a file
+src/RequestHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mmn14-server.dir/build.make CMakeFiles/mmn14-server.dir/src/RequestHandler.cpp.s
+.PHONY : src/RequestHandler.cpp.s
+
 src/Server.o: src/Server.cpp.o
 .PHONY : src/Server.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mmn14-server"
+	@echo "... src/RequestHandler.o"
+	@echo "... src/RequestHandler.i"
+	@echo "... src/RequestHandler.s"
 	@echo "... src/Server.o"
 	@echo "... src/Server.i"
 	@echo "... src/Server.s"
