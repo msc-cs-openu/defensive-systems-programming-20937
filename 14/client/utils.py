@@ -1,11 +1,10 @@
 from pathlib import Path
-import os
+import random
 
 
 def get_server_addr(file_path: Path | None = None) -> tuple[str, int]:
-    """Get the server address from a file.
-    """
-    file_path = file_path or Path.cwd() / "server.info"
+    """Get the server address from a file."""
+    file_path = file_path or Path(__file__).parent / "server.info"
 
     assert file_path.exists(), \
         f"Server info file `{file_path}` does not exist."
@@ -24,9 +23,8 @@ def get_server_addr(file_path: Path | None = None) -> tuple[str, int]:
 
 
 def get_backup_files(file_path: Path | None = None) -> list[str]:
-    """Get the list of backup files from a file.
-    """
-    file_path = file_path or Path.cwd() / "backup.info"
+    """Get the list of backup files from a file."""
+    file_path = file_path or Path(__file__).parent / "backup.info"
 
     assert file_path.exists(), \
         f"Backup info file `{file_path}` does not exist."
@@ -38,6 +36,5 @@ def get_backup_files(file_path: Path | None = None) -> list[str]:
 
 
 def generate_user_id() -> int:
-    """Generate a random 4-byte user ID.
-    """
-    return os.urandom(4)
+    """Generate a random 4-byte user ID number."""
+    return random.randint(1, 2**32 - 1)
